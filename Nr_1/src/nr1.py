@@ -48,8 +48,13 @@ def solve_1(n, h, aa):
     xx_real = np.linspace(0, 1, 1000)
     yy_real = real_solution_1(xx_real)
     
-    plt.plot(xx, uu)
-    plt.plot(xx_real, yy_real)
+    plt.title(f'FEM Exercise - f = 1, n={n}')
+    plt.xlabel('x')
+    plt.ylabel('u')
+    
+    plt.plot(xx_real, yy_real, label='Algebraic Solution')
+    plt.plot(xx, uu, linestyle='--', color='red', linewidth=3, label='FEM Solution')
+    plt.legend()
     plt.show()
     
 
